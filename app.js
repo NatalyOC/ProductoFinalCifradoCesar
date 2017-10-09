@@ -1,17 +1,22 @@
 //declaro variable mediante un prompt mostrará al usuario un pequeño menu
-var strMenu=parseInt(prompt('Menú1.- Cifrar' +'\n2.- Descifrar'+'\n3.- Salir'));
+do{
+var strMenu=parseInt(prompt('Menú'+'\n1.- Cifrar' +'\n2.- Descifrar'+'\n3.- Salir'));
 //de acuerdo a la opcion elegida
  switch (strMenu){
      //en caso sea opcion 1 del menú--Encriptará el texto
      case 1:
      {
-         //declaramos una variable y solicitamos al usuario ingresar un texto mediante un prompt
+        
+        //declaramos una variable y solicitamos al usuario ingresar un texto mediante un prompt
          var text=prompt('Ingrese texto a Cifrar: ');
          //escribimos el texto original
          document.write('Texto original:'+ text);
+         //salto de linea
+         document.write('<br></br>');
          //escribimos el texto codificado
          document.write('Texto codificado:' + cipher(text));
-         //cipher(text);
+         //cipher(text);}
+         
          break;
      }
      //en caso sea opcion 2 del menú--Desencriptará  el texto
@@ -21,12 +26,15 @@ var strMenu=parseInt(prompt('Menú1.- Cifrar' +'\n2.- Descifrar'+'\n3.- Salir'))
          var text=prompt('Ingrese texto a Descifrar:');
          //escribimos el texto original
          document.write('Texto original:'+ text);
+         //salto de linea
+         document.write('<br></br>');
         //escribimos el texto codificado
         document.write('Texto codificado:' + decipher(text));
          decipher(text);
          break;
      }
  }
+}while(srtMenu!==3);
 
 
 
@@ -56,7 +64,7 @@ function decipher(text){
      //declaro variable para obtener la formula del cifrado cesar
      var code=(x+65-33)%26+65;
      //acumulo en la variable la letra descifrada
-     decode+=String.fromCharCode(code);
+     decoded+=String.fromCharCode(code);
  }
  //retorno el texto descifrado
  return decoded;
